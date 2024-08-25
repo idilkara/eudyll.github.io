@@ -1,0 +1,146 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #000D29; /* Black background */
+    height: 100vh;
+}
+
+.stars {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    overflow: hidden;
+}
+
+.star {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #1E7819;
+    border-radius: 50%;
+    opacity: 0.0;
+    animation: fadeInOut linear infinite, twinkle 1s ease-in-out infinite; /* Add twinkle animation */
+
+}
+
+@keyframes fadeInOut {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.8;
+    }
+}
+
+
+@keyframes twinkle {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(2px);
+    }
+}
+
+
+.glassmorphic-container {
+    position: absolute;
+    top: 1%; /* Small margin from the top */
+    left: 10%; /* Margin from the left */
+    right: 10%; /* Margin from the right */
+    bottom: 1%; /* Small margin from the bottom */
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    border-radius: 20px; /* Rounded corners */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+    color: #fff; /* Text color */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: auto; /* Ensure content doesn't overflow */
+}
+
+.glassmorphic-container h1,
+.glassmorphic-container p {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* menu.css */
+/* menu.css */
+
+/* Basic styling for the sidebar menu */
+.sidebar-menu {
+    position: fixed;
+    top: 0;
+    right: -250px; /* Hide the sidebar off-screen initially on the right side */
+    width: 250px;
+    background:rgba(255, 255, 255, 0.1);;; /* Semi-transparent dark background */
+    color: #fff;
+    border-radius: 20px; /* Rounded corners */
+    transition: right 0.3s ease; /* Smooth transition */
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+    overflow: hidden;
+    max-height: calc(100vh - 1rem); /* Limit height to viewport minus padding */
+}
+
+.sidebar-menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: auto 0; /* Center vertically using auto margins */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; /* Center items horizontally */
+}
+
+.sidebar-menu ul li {
+    margin-bottom: 1rem;
+}
+
+.sidebar-menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+/* Show the sidebar when hovering over the menu area */
+.sidebar-menu:hover {
+    right: 0; /* Slide the sidebar into view from the right */
+}
+
+/* Optional: Styling for the hover effect */
+.sidebar-menu:hover {
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.7); /* Enhance shadow on hover */
+}
+
+
+
+/* Glassmorphic scrollbar styling */
+::-webkit-scrollbar {
+    width: 12px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.2); /* Background of the scrollbar track */
+    border-radius: 10px; /* Rounded corners for the track */
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.6); /* Color of the scrollbar handle */
+    border-radius: 10px; /* Rounded corners for the handle */
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.3); /* Shadow for a glass effect */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.8); /* Color of the handle on hover */
+}
